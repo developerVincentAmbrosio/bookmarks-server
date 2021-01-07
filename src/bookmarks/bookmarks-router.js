@@ -74,9 +74,9 @@ bookmarksRouter
 
   .delete((req, res) => {
     const { bookmark_id } = req.params;
-    const bookmarkIndex = bookmarks.findIndex(b => b.id === bookmark_id)
+    const bookmarkIndex = bookmarks.findIndex(b => b.id == bookmark_id)
     
-    if (bookIndex === -1) {
+    if (bookmarkIndex === -1) {
       logger.error(`Bookmark with id ${bookmark_id} not found.`);
       return res
         .status(404)
